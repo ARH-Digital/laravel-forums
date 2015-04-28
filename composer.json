@@ -1,7 +1,8 @@
 {
-    "name": "bishopb/laravel-forums",
+    "name": "ARH-Digital/laravel-forums",
     "description": "Forums and discussion boards for Laravel, using the Vanilla Forums engine.",
     "license": "GPL-2.0",
+    "version": "0.2",
     "authors": [
         {
             "name": "Bishop Bettini", "email": "bishop@php.net"

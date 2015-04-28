@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2b321f5a9ec9fea204beb7f6338bef1",
+    "hash": "2721b14b432e6df1c8248063650e2d9a",
     "packages": [
         {
             "name": "bishopb/vanilla",
