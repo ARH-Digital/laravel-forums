@@ -1,25 +1,28 @@
-<?php
+<?php namespace BishopB\Forum;
 
-namespace BishopB\Forum;
+use Illuminate\Support\ServiceProvider;
+use \Illuminate\Contracts\Auth\Authenticatable as AppUser;
 
-use \Illuminate\Auth\UserInterface as AppUser;
-
-class ForumServiceProvider extends \Illuminate\Support\ServiceProvider
+class ForumServiceProvider extends ServiceProvider
 {
-	/**
-	 * Routing is about to happen, define things we'll need for routing.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
-		$this->package('bishopb/laravel-forums', 'forum', __DIR__);
+    /**
+     * Routing is about to happen, define things we'll need for routing.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        // Removed this line for Lara5
+        //$this->package('bishopb/laravel-forums', 'forum', __DIR__);
+        $this->publishes([
+            realpath(__DIR__.'/migrations') => $this->app->databasePath().'/migrations',
+        ]);
 
-		require_once __DIR__ . '/boot/helpers.php';
-		require_once __DIR__ . '/boot/routes.php';
+        require_once __DIR__ . '/boot/helpers.php';
+        require_once __DIR__ . '/boot/routes.php';
 
         $this->commands('forum::commands.migrate', 'forum::commands.connect');
-	}
+    }
 
 	/**
 	 * Register the service provider. Keep it fast.
