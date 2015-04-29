@@ -17,6 +17,7 @@ class VanillaSetup
      */
     public function install()
     {
+
         // create cache structure
         $this->create_directories();
 
@@ -59,6 +60,7 @@ class VanillaSetup
     protected function create_directories()
     {
         $paths = [
+            storage_path() . '/cache',
             storage_path() . '/cache/Smarty',
             storage_path() . '/cache/Smarty/cache',
             storage_path() . '/cache/Smarty/compile',

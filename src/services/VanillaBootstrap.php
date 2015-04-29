@@ -41,7 +41,7 @@ class VanillaBootstrap
         require_once(PATH_ROOT . '/bootstrap.php');
 
         // recover Laravel error handling
-        \App::getFacadeRoot()->startExceptionHandling();
+        //\App::getFacadeRoot()->startExceptionHandling();
 
         // do the requested work
         call_user_func($callback);
@@ -60,7 +60,7 @@ class VanillaBootstrap
             'APPLICATION'         => 'Vanilla',
             'APPLICATION_VERSION' => $this->get_vanilla_version(),
             'DS'                  => '/',
-            'PATH_ROOT'           => $this->get_vanilla_path(),
+            'PATH_ROOT'           => '../vendor/bishopb/vanilla',//$this->get_vanilla_path(),
             'PATH_CACHE'          => storage_path() . '/cache',
             'PATH_THEMES'         => (
                 file_exists($local_theme_path) ?

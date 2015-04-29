@@ -37,9 +37,17 @@ Add the package service provider to your `app/config/app.php`:
 ),
 ```
 Publish the migrations: `php artisan vendor:publish`
+
 Migrate your database: `php artisan migrate`  
 
+Add `"require-dev": {
+    "predis/predis": "~1.0"
+  },` to composer.json
+
+
 Connect Vanilla and Laravel: `php artisan forum:connect`  
+
+
 
 Navigate to the `/forum` route.  You should see a forum with no posts, logged in as "Anonymous".  Click "New Discussion" to start a conversation.  Congratulations, you now have a basic forum to which anyone can post messages.
 
